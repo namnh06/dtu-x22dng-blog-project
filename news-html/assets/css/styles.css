@@ -1,0 +1,10 @@
+.news__col {
+  display: table-cell;
+}
+.news__image {
+  height: 150px;
+  background: url('../images/1920x1080.png');
+  background-position: center;
+  background-size: contain;
+  filter: brightness(80%);
+}
