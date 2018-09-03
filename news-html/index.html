@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>News 2018</title>
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./assets/css/bootstrap.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
@@ -13,17 +14,22 @@
 </head>
 
 <body>
-  <header class="container ">
+  <header class="container Header">
     <div class="row">
-      <div class="d-none d-md-flex col-md-2 align-items-center">
+      <div class="d-none d-md-flex col-md-2 px-0 align-items-center">
         <a href="#" class=" btn btn-outline-danger text-uppercase">sign up now</a>
       </div>
-      <div class=" col-12 col-md-8 d-flex justify-content-center ">
-        <a href="# " class="btn ">
-          <h1 class="text-center text-success ">NEWS</h1>
+      <div class="col-12 px-0 col-md-8 d-flex justify-content-between justify-content-md-center align-items-center">
+        <a href="# " class="btn px-0">
+          <h1 class="text-center text-success ">SHARING & LEARNING</h1>
         </a>
+        <div class="d-block d-md-none">
+          <button type="button" class="btn btn-sm btn-outline-success border" id="js-navigation-button">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
       </div>
-      <div class="d-none d-md-flex col-md-2 align-items-center justify-content-end">
+      <div class="d-none d-md-flex px-0 col-md-2 align-items-center justify-content-end">
         <a href="#">
           <i class="fas fa-search mr-3 text-muted"></i>
         </a>
@@ -32,15 +38,15 @@
     </div>
   </header>
 
-  <nav class="container navigation ">
+  <nav class="d-md-block container Navigation" id="js-navigation">
     <div class="row">
-      <div class="col-12 d-flex">
-        <div class="d-flex justify-content-start align-items-center mx-right ">
+      <div class="col-12 d-flex px-0">
+        <div class="d-none d-md-flex justify-content-start align-items-center mx-right ">
           <a class="text-muted " href="# ">
             <i class="fas fa-angle-left "></i>
           </a>
         </div>
-        <div class="d-flex justify-content-around w-100">
+        <div class="d-flex flex-column flex-md-row justify-content-around w-100">
           <div class="m-2 ">
             <a class="text-dark" href="#/home ">
               Home
@@ -78,7 +84,7 @@
             </a>
           </div>
         </div>
-        <div class="d-flex align-items-center ml-auto ">
+        <div class="d-none d-md-flex align-items-center ml-auto ">
           <a class="text-muted float-right " href="# ">
             <i class="fas fa-angle-right "></i>
           </a>
@@ -87,14 +93,13 @@
     </div>
   </nav>
 
-  <div class="container ">
+  <div class="container py-3 border-top">
     <div class="row ">
-      <div class="col-8">
+      <div class="col-6 col-md-8 px-1">
         <div class="card-group h-100 ">
-          <div class="card ">
+          <div class="card">
             <a class="h-100 " href="# ">
-
-              <div class="news__image h-100"></div>
+              <div class="News__Image News__Image--first h-100"></div>
               <div class="card-img-overlay text-white d-flex flex-column justify-content-end ">
                 <h5 class="card-title ">Card title</h5>
                 <p class="card-text ">This is a wider card with supporting text below as a natural lead-in to additional
@@ -102,10 +107,9 @@
               </div>
             </a>
           </div>
-          <div class="card text-white ">
-            <div class="news__image h-100"></div>
-
-            <div class="card-img-overlay d-flex flex-column justify-content-end ">
+          <div class="card d-none d-md-block">
+            <div class="News__Image News__Image--second h-100"></div>
+            <div class="card-img-overlay text-white d-flex flex-column justify-content-end ">
               <h5 class="card-title ">Card title</h5>
               <p class="card-text ">This is a wider card with supporting text below as a natural lead-in to additional content.
                 This content is a little bit longer.</p>
@@ -113,7 +117,7 @@
           </div>
         </div>
       </div>
-      <div class="col-4">
+      <div class="col-6 col-md-4 px-1">
         <div class="card ">
           <div class="card-header ">
             Hot News
@@ -166,10 +170,10 @@
 
   <div class="container border-top mt-3">
     <div class="row justify-content-between mt-2 ">
-      <div class="col-1">
+      <div class="col-2">
         <a href="# " class="badge badge-success text-capitalize ">Feature</a>
       </div>
-      <div class="col-1">
+      <div class="col-2 d-flex justify-content-end">
         <small class="ml-auto ">
           <a href="# " class="text-muted text-uppercase">more
             <i class="fas fa-chevron-right "></i>
@@ -177,42 +181,38 @@
         </small>
       </div>
     </div>
-    <div class="row mt-2 news">
-      <div class="col-8 news__col">
-        <div class="card-deck mb-auto h-50 pb-1 ">
+    <div class="row mt-2 News">
+      <div class="col-12 col-md-8 News__Col">
+        <div class="card-deck mb-auto pb-1 ">
           <div class="card">
-            <div class="card-img-top news__image news__image">
+            <div class="card-img-top News__Image News__Image--third">
             </div>
             <div class="card-body ">
               <h5 class="card-title ">Card title</h5>
               <p class="card-text text-truncate ">This is a wider card with supporting text below as a natural lead-in to
                 additional content. This content is a little bit longer.</p>
-
             </div>
             <div class="card-footer ">
               <small class="text-muted ">Last updated 3 mins ago</small>
             </div>
           </div>
           <div class="card ">
-            <div class="card-img-top news__image news__image">
+            <div class="card-img-top News__Image News__Image--fourth">
             </div>
             <div class="card-body ">
               <h5 class="card-title ">Card title</h5>
               <p class="card-text text-truncate ">This card has supporting text below as a natural lead-in to additional
                 content.
               </p>
-
             </div>
             <div class="card-footer ">
               <small class="text-muted ">Last updated 3 mins ago</small>
-
             </div>
           </div>
         </div>
-        <div class="card-deck h-50 pt-1 ">
+        <div class="d-none d-md-flex card-deck pt-1 ">
           <div class="card ">
-
-            <div class="card-img-top news__image news__image">
+            <div class="card-img-top News__Image News__Image--fifth">
             </div>
             <div class="card-body ">
               <h5 class="card-title ">Card title</h5>
@@ -225,7 +225,7 @@
             </div>
           </div>
           <div class="card ">
-            <div class="card-img-top news__image news__image">
+            <div class="card-img-top News__Image News__Image--sixth">
             </div>
             <div class="card-body ">
               <h5 class="card-title ">Card title</h5>
@@ -239,9 +239,9 @@
           </div>
         </div>
       </div>
-      <div class="col-4 news__col ">
+      <div class="d-none d-md-block col-md-4 News__Col ">
         <div class="card h-100">
-          <div class="card-img-top news__image news__image h-50"></div>
+          <div class="card-img-top News__Image News__Image--seventh h-50"></div>
           <div class="card-body ">
             <h5 class="card-title ">Card title</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi incidunt minus dolorem
@@ -259,10 +259,10 @@
 
   <div class="container border-top mt-3">
     <div class="row justify-content-between mt-2 ">
-      <div class="col-1">
+      <div class="col-2">
         <a href="# " class="badge badge-danger text-capitalize">hot</a>
       </div>
-      <div class="col-1">
+      <div class="col-2 d-flex justify-content-end">
         <small class="ml-auto ">
           <a href="# " class="text-muted text-uppercase">more
             <i class="fas fa-chevron-right "></i>
@@ -270,10 +270,10 @@
         </small>
       </div>
     </div>
-    <div class="row mt-2 news">
-      <div class="col-4 news__col ">
+    <div class="row mt-2 News">
+      <div class="d-none d-md-block col-md-4 News__Col ">
         <div class="card h-100">
-          <div class="card-img-top news__image news__image h-50"></div>
+          <div class="card-img-top News__Image News__Image--eighth h-50"></div>
           <div class="card-body ">
             <h5 class="card-title ">Card title</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi incidunt minus dolorem
@@ -286,10 +286,10 @@
           </div>
         </div>
       </div>
-      <div class="col-8 news__col">
-        <div class="card-deck mb-auto h-50 pb-1 ">
+      <div class="col-12 col-md-8 News__Col ">
+        <div class="card-deck mb-auto pb-1 ">
           <div class="card">
-            <div class="card-img-top news__image news__image">
+            <div class="card-img-top News__Image News__Image--ninth">
             </div>
             <div class="card-body ">
               <h5 class="card-title ">Card title</h5>
@@ -302,7 +302,7 @@
             </div>
           </div>
           <div class="card ">
-            <div class="card-img-top news__image news__image">
+            <div class="card-img-top News__Image News__Image--tenth">
             </div>
             <div class="card-body ">
               <h5 class="card-title ">Card title</h5>
@@ -317,10 +317,10 @@
             </div>
           </div>
         </div>
-        <div class="card-deck h-50 pt-1 ">
+        <div class="d-none d-md-flex card-deck pt-1 ">
           <div class="card ">
 
-            <div class="card-img-top news__image news__image">
+            <div class="card-img-top News__Image News__Image--eleventh">
             </div>
             <div class="card-body ">
               <h5 class="card-title ">Card title</h5>
@@ -333,7 +333,7 @@
             </div>
           </div>
           <div class="card ">
-            <div class="card-img-top news__image news__image">
+            <div class="card-img-top News__Image News__Image--twelveth">
             </div>
             <div class="card-body ">
               <h5 class="card-title ">Card title</h5>
@@ -347,27 +347,83 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
-  <footer class="container my-5 border-top">
-    <div class=" row">
-      <div class="col-6">
-        <small class="mx-2">
-          <a href="#/home " class="text-muted ">Home</a>
-        </small>
-        <small class="mx-2">
-          <a href=" " class="text-muted ">Contact</a>
-        </small>
-        <small class="mx-2">
-          <a href=" " class="text-muted ">Support</a>
-        </small>
+
+  <!-- Footer of Webpage -->
+  <div class="container-fluid border-top my-2 px-5 bg-light">
+    <div class="d-flex flex-row mt-2">
+      <div class="col-10 col-md-6">
+        <div class="h4 text-uppercase">website chia sẻ và hướng dẫn học lập trình</div>
+        <div class="text-capitalize">Địa chỉ: K01B/95 Lê Trọng Tấn, Quận Thanh Khê, Thành Phố Đà Nẵng</div>
+        <div class="text-capitalize">Điện thoại: 0932 578 992</div>
+        <div>Email: namnh.developer@gmail.com
+        </div>
+        <p> &copy;2018</p>
       </div>
-      <div class="col-6 d-flex justify-content-end">
-        <span class="text-muted text-uppercase">aptech&nbsp;&copy;&nbsp;2018</span>
+      <div class="col-md-3 d-none d-md-block ">
+        <ul class="list-unstyled ">
+          <li>
+            <a href="# ">
+              <h5 class="text-dark ">Navigation</h5>
+            </a>
+          </li>
+          <li>
+            <a class="text-muted " href="# ">HOME</a>
+          </li>
+          <li>
+            <a class="text-muted " href="# ">HTML</a>
+          </li>
+          <li>
+            <a class="text-muted " href="# ">CSS</a>
+          </li>
+          <li>
+            <a class="text-muted " href="# ">JavaScript</a>
+          </li>
+          <li>
+            <a class="text-muted " href="# ">PHP</a>
+          </li>
+          <li>
+            <a class="text-muted " href="# ">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-2 col-md-3 ">
+        <ul class="list-unstyled ">
+          <li>
+            <a href="# ">
+              <h5 class="text-dark ">About</h5>
+            </a>
+          </li>
+          <li>
+            <a class="text-muted " href="# ">Team</a>
+          </li>
+          <li>
+            <a class="text-muted " href="# ">Location</a>
+          </li>
+          <li>
+            <a class="text-muted " href="# ">Privacy</a>
+          </li>
+          <li>
+            <a class="text-muted " href="# ">Terms</a>
+          </li>
+
+        </ul>
       </div>
     </div>
-  </footer>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="./assets/js/jquery.js "></script>
+
+  <!-- Popper.js -->
+  <script src="./assets/js/popper.js "></script>
+
+  <!-- Bootstrap JS -->
+  <script src="./assets/js/bootstrap.js "></script>
+
+  <script src="./assets/js/scripts.js "></script>
 </body>
 
 </html>
