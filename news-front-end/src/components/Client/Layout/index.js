@@ -1,19 +1,17 @@
-import React, {
-  Fragment
-} from 'react';
-import {
-  connect
-} from 'react-redux';
-import Wrapper from './Wrapper';
-import Header from './Header';
+import { connect } from 'react-redux';
+import React, { Fragment } from 'react';
+
 import Footer from './Footer';
-import ScrollTop from './ScrollTop';
 import Form from './Form';
+import Header from './Header';
+import Navigation from './Navigation';
+import ScrollTop from './ScrollTop';
 import withErrorHandler from '../../../hoc/withErrorHandler';
+import Wrapper from './Wrapper';
+
+import { informationFetchStart } from '../../../store/actions/information.action';
 import axios from '../../../helpers/axios.config';
-import {
-  informationFetchStart
-} from '../../../store/actions/information.action';
+
 class index extends React.Component {
   state = {
     signUpForm: false,
@@ -61,78 +59,49 @@ class index extends React.Component {
   };
 
   render() {
-    return ( <
-        Fragment > {
-          this.state.signUpForm && ( <
-            Form type = "signup"
-            onButtonSignUpClicked = {
-              _ => this.onButtonSignUpClickHandler()
-            }
-            onEscapeButtonPressed = {
-              _ => this.onEscapeButtonPressHandler()
-            }
-            onButtonLogInClicked = {
-              _ => this.onButtonLogInClickHandler()
-            }
-            />
-          )
-        } {
-          this.state.logInForm && ( <
-            Form type = "login"
-            onButtonSignUpClicked = {
-              _ => this.onButtonSignUpClickHandler()
-            }
-            onButtonLogInClicked = {
-              _ => this.onButtonLogInClickHandler()
-            }
-            onEscapeButtonPressed = {
-              _ => this.onEscapeButtonPressHandler()
-            }
-            />
-          )
-        } {
-          this.props.information.length > 0 && ( <
-            Header onButtonSignUpClicked = {
-              _ => this.onButtonSignUpClickHandler()
-            }
-            onButtonLogInClicked = {
-              _ => this.onButtonLogInClickHandler()
-            }
-            information = {
-              this.props.information
-            }
-            />
-          )
-        } <
-        Wrapper { ...this.props
-        }
-        onButtonSignUpClicked = {
-          _ => this.onButtonSignUpClickHandler()
-        }
-        onButtonLogInClicked = {
-          _ => this.onButtonLogInClickHandler()
-        }
-        /> {
-        this.props.information.length > 0 && ( <
-          Footer onButtonSignUpClicked = {
-            _ => this.onButtonSignUpClickHandler()
-          }
-          onButtonLogInClicked = {
-            _ => this.onButtonLogInClickHandler()
-          }
-          information = {
-            this.props.information
-          }
+    return (
+      <Fragment>
+        {' '}
+        {this.state.signUpForm && (
+          <Form
+            type="signup"
+            onButtonSignUpClicked={_ => this.onButtonSignUpClickHandler()}
+            onEscapeButtonPressed={_ => this.onEscapeButtonPressHandler()}
+            onButtonLogInClicked={_ => this.onButtonLogInClickHandler()}
           />
-        )
-      } <
-      ScrollTop clicked = {
-        _ => this.onButtonScrollTopClickHandler()
-      }
-    /> < /
-    Fragment >
-  );
-}
+        )}{' '}
+        {this.state.logInForm && (
+          <Form
+            type="login"
+            onButtonSignUpClicked={_ => this.onButtonSignUpClickHandler()}
+            onButtonLogInClicked={_ => this.onButtonLogInClickHandler()}
+            onEscapeButtonPressed={_ => this.onEscapeButtonPressHandler()}
+          />
+        )}{' '}
+        {this.props.information.length > 0 && (
+          <Header
+            onButtonSignUpClicked={_ => this.onButtonSignUpClickHandler()}
+            onButtonLogInClicked={_ => this.onButtonLogInClickHandler()}
+            information={this.props.information}
+          />
+        )}
+        <Navigation />
+        <Wrapper
+          {...this.props}
+          onButtonSignUpClicked={_ => this.onButtonSignUpClickHandler()}
+          onButtonLogInClicked={_ => this.onButtonLogInClickHandler()}
+        />{' '}
+        {this.props.information.length > 0 && (
+          <Footer
+            onButtonSignUpClicked={_ => this.onButtonSignUpClickHandler()}
+            onButtonLogInClicked={_ => this.onButtonLogInClickHandler()}
+            information={this.props.information}
+          />
+        )}{' '}
+        <ScrollTop clicked={_ => this.onButtonScrollTopClickHandler()} />{' '}
+      </Fragment>
+    );
+  }
 }
 
 const mapStateToProps = state => {

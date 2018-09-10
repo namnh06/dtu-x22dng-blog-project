@@ -15,74 +15,35 @@ class index extends Component {
 
   render() {
     return (
-      <div
-        id="js-nav-bar"
-        className={'container-fluid Client__Navigation-Bar fixed-top'}
-      >
-        <div className="row h-100">
-          <nav className="navbar navbar-expand-lg navbar-light bg-light w-100 h-100 p-0 px-lg-3">
-            <div className="col-10 col-lg-3 navbar-brand d-flex align-items-center h-100 mx-0">
-              <Brand
-                link={this.props.information[1].value}
-                slogan="it's free"
-                textColor="text-dark"
-              />
-            </div>
-            <div className="d-flex d-lg-none col-2 justify-content-end">
+      <header className="container Header">
+        <div className="row">
+          <div className="d-none d-md-flex col-md-2 px-0 align-items-center">
+            <a className=" btn btn-outline-danger text-uppercase">
+              sign up now
+            </a>
+          </div>
+          <div className="col-12 px-0 col-md-8 d-flex justify-content-between justify-content-md-center align-items-center">
+            <a className="btn px-0">
+              <h1 className="text-center text-success ">SHARING & LEARNING</h1>
+            </a>
+            <div className="d-block d-md-none">
               <button
-                className="navbar-toggler collapsed Client__Navigation-Bar__Button border border-dark rounded-0"
                 type="button"
-                data-toggle="collapse"
-                data-target="#js-navbar-collapse"
-                aria-controls="js-navbar-collapse"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
+                className="btn btn-sm btn-outline-success border"
+                id="js-navigation-button"
               >
-                <i className="fa fa-bars fa-2x text-dark" />
+                <i className="fas fa-bars" />
               </button>
             </div>
-
-            <div
-              className="collapse navbar-collapse col-lg-9 px-0"
-              id="js-navbar-collapse"
-            >
-              <ul className="navbar-nav Client__Navigation-Bar__list ml-auto p-3 bg-light">
-                {!!this.props.menus.length && (
-                  <Fragment>
-                    {Object.keys(this.props.menus).map((pos, index) => {
-                      return (
-                        <NavigationBar
-                          type="anchor"
-                          key={++index}
-                          {...this.props.menus[pos]}
-                          slug={this.props.menus[pos].slug}
-                          isScroll={this.props.isScroll}
-                        >
-                          {this.props.menus[pos].name}
-                        </NavigationBar>
-                      );
-                    })}
-                    <NavigationBar
-                      isScroll={this.props.isScroll}
-                      type="button"
-                      name="sign up"
-                      className="Client__Navigation-Bar__list__button"
-                      clicked={this.props.onButtonSignUpClicked}
-                    />
-                    <NavigationBar
-                      isScroll={this.props.isScroll}
-                      type="button"
-                      name="log in"
-                      className="Client__Navigation-Bar__list__button"
-                      clicked={this.props.onButtonLogInClicked}
-                    />
-                  </Fragment>
-                )}
-              </ul>
-            </div>
-          </nav>
+          </div>
+          <div className="d-none d-md-flex px-0 col-md-2 align-items-center justify-content-end">
+            <a>
+              <i className="fas fa-search mr-3 text-muted" />
+            </a>
+            <a className=" btn btn-outline-success text-uppercase">sign in</a>
+          </div>
         </div>
-      </div>
+      </header>
     );
   }
 }
